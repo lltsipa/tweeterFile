@@ -18,14 +18,12 @@ namespace tweeterFile
 
                 while ((userfileLine = userReader.ReadLine()) != null)
                 {
-                    TweeterUsers tweeterUsers = null;
-
                     var userAndFollower = userfileLine.Split(new string[] { "follows" }, StringSplitOptions.None);
                     var checkFollowerExist = tweeterUsersDictionary.ContainsKey(userAndFollower[0].ToString().Trim());
 
                     if (checkFollowerExist == false)
                     {
-                        tweeterUsers = new TweeterUsers();
+                        TweeterUsers tweeterUsers = new TweeterUsers();
                         tweeterUsers.Follows = new List<string>();
 
                         tweeterUsers.Username = userAndFollower[0].ToString().Trim();
@@ -61,7 +59,7 @@ namespace tweeterFile
                         var findUser = tweeterUsersDictionary.ContainsKey(followed.Trim());
                         if (findUser == false)
                         {
-                            tweeterUsers = new TweeterUsers();
+                            TweeterUsers tweeterUsers = new TweeterUsers();
                             tweeterUsers.Follows = new List<string>();
                             tweeterUsers.UserFeeds = new List<string>();
 
@@ -80,14 +78,14 @@ namespace tweeterFile
                 string tweetfileLine;
                 while ((tweetfileLine = tweetReader.ReadLine()) != null)
                 {
-                    TweeterUsers tweeterUser = new TweeterUsers();
-                    tweeterUser.UserFeeds = new List<string>();
-
                     var userAndPost = tweetfileLine.Split('>');
                     var checkUsers = tweeterUsersDictionary.ContainsKey(userAndPost[0].ToString().Trim());
 
                     if (checkUsers == true)
                     {
+                        TweeterUsers tweeterUser = new TweeterUsers();
+                        tweeterUser.UserFeeds = new List<string>();
+
                         tweeterUser = tweeterUsersDictionary.FirstOrDefault(user => user.Key == userAndPost[0].ToString()).Value;
 
                         var userFollowersList = tweeterUsersDictionary.Where(user => user.Value.Follows.Contains(userAndPost[0].ToString())).ToList();
@@ -111,7 +109,6 @@ namespace tweeterFile
 
                         tweeterUser.UserFeeds.Add("@" + userAndPost[0].ToString() + ": " + userAndPost[1].ToString());
                     }
-
                 }
             }
 
