@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -125,11 +126,12 @@ namespace tweeterFile
         {
             try
             {
-                string tweetFilePath = "C:\\Users\\lonwabo.CONSEQUENT\\Desktop\\Lonwabo\\tweeterFile\\tweet.txt";
-                string userFilePath = "C:\\Users\\lonwabo.CONSEQUENT\\Desktop\\Lonwabo\\tweeterFile\\users.txt";
+                string tweetpath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName, "tweet.txt");
+                string userFilePath = Path.Combine(Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.FullName, "users.txt");
+                
                 Dictionary<string, TweeterUsers> tweeterUsersDictionary = new Dictionary<string, TweeterUsers>();
                 Program newapp = new Program();
-                newapp.getTwitter(userFilePath,tweetFilePath, tweeterUsersDictionary);
+                newapp.getTwitter(userFilePath, tweetpath, tweeterUsersDictionary);
                  
                 Console.WriteLine("Press enter key to exit application.");
                 System.Console.ReadKey();
