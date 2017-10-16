@@ -1,0 +1,6 @@
+C:\Users\lonwabo.CONSEQUENT\Desktop\Lonwabo\tweeterFile\tweeterFile\bin\Debug\tweeterFile.exe.config
+C:\Users\lonwabo.CONSEQUENT\Desktop\Lonwabo\tweeterFile\tweeterFile\bin\Debug\tweeterFile.exe
+C:\Users\lonwabo.CONSEQUENT\Desktop\Lonwabo\tweeterFile\tweeterFile\bin\Debug\tweeterFile.pdb
+C:\Users\lonwabo.CONSEQUENT\Desktop\Lonwabo\tweeterFile\tweeterFile\obj\Debug\tweeterFile.csprojResolveAssemblyReference.cache
+C:\Users\lonwabo.CONSEQUENT\Desktop\Lonwabo\tweeterFile\tweeterFile\obj\Debug\tweeterFile.exe
+C:\Users\lonwabo.CONSEQUENT\Desktop\Lonwabo\tweeterFile\tweeterFile\obj\Debug\tweeterFile.pdb
